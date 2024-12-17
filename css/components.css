@@ -1,0 +1,56 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid var(--template-stroke);
+    font-size: 14px;
+    color: var(--template-text);
+    background: white;
+    gap: 0.5rem;
+}
+.badge svg {
+    width: 16px;
+    height: 16px;
+}
+.avatar-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #F8F5FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.avatar-icon {
+    width: 60px;
+    height: 60px;
+    color: #7C3AED;
+}
+.contact-button {
+    background-color: var(--template-lead);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+.contact-button:hover {
+    background-color: var(--template-lead-dark);
+}
+.username {
+    color: var(--template-text-opacity-50);
+    font-size: 14px;
+}
+.role-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+}
+/* Badge icons */
+.icon-advisor { color: #0D9488; }
+.icon-manager { color: #2563EB; }
+.icon-leadership { color: #059669; }
+.icon-board { color: #7C3AED; }
+.icon-sales { color: #0D9488; }
+.icon-mother { color: #EC4899; }
