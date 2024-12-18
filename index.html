@@ -5,118 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio website Monika</title>
     
-    <!-- Base styles -->
+    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/tailwind.css">
-    <link rel="stylesheet" href="/css/typography.css">
-    <link rel="stylesheet" href="/css/variables.css">
-    <link rel="stylesheet" href="/css/components.css">
+    
+    <!-- Font imports -->
+    <style>
+        @font-face {
+            font-family: 'DM Sans';
+            src: url('/fonts/DM-Sans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Cormorant Garamond';
+            src: url('/fonts/CormorantGaramond-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
+    
+    <!-- Lucide Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
 </head>
-<body class="tw-bg-template-background">
-    <div class="tw-max-w-[800px] tw-mx-auto tw-px-4 tw-pt-8">
-        <!-- Header section -->
-        <div class="tw-flex tw-items-start tw-justify-between">
-            <div class="tw-flex tw-gap-6">
-                <!-- Avatar -->
-                <div class="avatar-container">
-                    <svg class="avatar-icon" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                </div>
-                
-                <!-- Profile info -->
-                <div>
-                    <h1 class="tw-text-2xl tw-font-bold">Monika Tøkje Hauge</h1>
-                    <div class="username">@monikatkje_hauge</div>
-                    <p class="role-text">I'm a Sales Representative, Leadership, & Nurturer based in Norway - currently working at Assent AS · Norway</p>
-                    
-                    <!-- Badges -->
-                    <div class="tw-flex tw-flex-wrap tw-gap-2 tw-mt-4">
-                        <span class="badge">
-                            <svg class="icon-advisor" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-                            Advisor
-                        </span>
-                        <span class="badge">
-                            <svg class="icon-manager" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-                            Manager
-                        </span>
-                        <span class="badge">
-                            <svg class="icon-leadership" viewBox="0 0 24 24"><path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                            Leadership
-                        </span>
-                        <span class="badge">
-                            <svg class="icon-board" viewBox="0 0 24 24"><path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                            Board Member
-                        </span>
-                        <span class="badge">
-                            <svg class="icon-sales" viewBox="0 0 24 24"><path fill="currentColor" d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
-                            Sales
-                        </span>
-                        <span class="badge">
-                            <svg class="icon-mother" viewBox="0 0 24 24"><path fill="currentColor" d="M9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm-7 4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2v4H2v-4zm16-2c1.1 0 2 .9 2 2v4h-3v-4c0-1.1.9-2 2-2z"/></svg>
-                            Mother
-                        </span>
-                    </div>
-                </div>
+<body class="bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 py-8">
+        <!-- Profile Section -->
+        <div class="flex flex-col items-center space-y-6">
+            <!-- Avatar -->
+            <div class="relative w-32 h-32">
+                <img 
+                    id="profileImage"
+                    class="w-full h-full rounded-full object-cover border-2 border-gray-200"
+                    src="/api/placeholder/128/128"
+                    alt="Monika Tøkje Hauge"
+                    onerror="this.onerror=null; this.innerHTML='<i data-lucide=\'user\'></i>'"
+                />
             </div>
             
-            <!-- Contact button -->
-            <a href="/contact" class="contact-button">Contact Me</a>
-        </div>
-    </div>
-    <div class="identity-profile-details-section">
-        <p class="tw-text-template-text">Jeg har gjennom min karriere jobbet med salg og skapt gode relasjoner med mange bedrifter som ønsker nettopp dette. Dette varmer hjertet mitt og gjør at jeg kan leve opp til min visjon i livet; « å hjelpe andre».</p>
-    </div>
-    <div class="identity-profile-positions-section tw-mb-12">
-        <h2 class="identity-generic-section-title tw-text-template-text tw-text-2xl tw-font-bold tw-mb-6">Resume</h2>
-
-        <article class="tw-py-4 tw-border-t tw-border-template-stroke">
-            <p class="tw-text-template-text">Apr 2024 - Nå</p>
-            <h3 class="h4 tw-text-template-text tw-font-bold">Driftskordinator, Assent AS</h3>
-        </article>
-        <article class="tw-py-4 tw-border-t tw-border-template-stroke">
-            <p class="tw-text-template-text">Oct 2023 - May 2024</p>
-            <h3 class="h4 tw-text-template-text tw-font-bold">Jobbspesialist, NAV</h3>
-        </article>
-        <article class="tw-py-4 tw-border-t tw-border-template-stroke">
-            <p class="tw-text-template-text">Jan 2020 - May 2024</p>
-            <h3 class="h4 tw-text-template-text tw-font-bold">Jobbveileder, Beredt AS</h3>
-            <p class="tw-text-template-text">Jobber med AFT tiltaket i regi NAV. Målet er å rekruttere 50% av de som kommer til Beredt tilbake til arbeid eller utdanning. Vi kartlegger de som kommer til oss og matcher rett bedrift eller evt. utdanningsprogram. </p>
-        </article>
-        <article class="tw-py-4 tw-border-t tw-border-template-stroke">
-            <p class="tw-text-template-text">Jan 2020 - Dec 2022</p>
-            <h3 class="h4 tw-text-template-text tw-font-bold">Veildning, VID vitenskapelige høgskole</h3>
-        </article>
-    </div>
-    <div class="identity-profile-logo-wall-section tw-mb-12">
-        <h2 class="identity-generic-section-title tw-text-template-text tw-text-2xl tw-font-bold tw-mb-6">Companies I've worked with</h2>
-        <div class="logo-wall-container tw-grid sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
-            <div class="logo-wall-item">
-                <img src="/images/nav-logo.jpg" alt="NAV" class="tw-w-full tw-object-contain">
-            </div>
-            <div class="logo-wall-item">
-                <img src="/images/beredt-logo.png" alt="Beredt" class="tw-w-full tw-object-contain">
-            </div>
-            <div class="logo-wall-item">
-                <img src="/images/assent-logo.png" alt="Kelly Services" class="tw-w-full tw-object-contain">
-            </div>
-        </div>
-    </div>
-    <footer class="identity-footer tw-border-t tw-border-template-stroke tw-py-4 tw-mt-8">
-        <div class="tw-flex tw-justify-between tw-items-center">
-            <div class="identity-footer-section caption-2 tw-text-template-text">
-                <span class="tw-mr-4">Monika Tøkje Hauge</span>
-                <span class="tw-mr-4">@monikatkje_hauge</span>
-                <span>Norway</span>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/monika-tøkje-hauge-64a073142" target="_blank" class="icon-button hover:tw-bg-template-stroke-opacity-30">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="tw-text-template-secondary">
-                        <path d="M18.8571 4H5.13929C4.51071 4 4 4.51786 4 5.15357V18.8464C4 19.4821 4.51071 20 5.13929 20H18.8571C19.4857 20 20 19.4821 20 18.8464V5.15357C20 4.51786 19.4857 4 18.8571 4ZM8.83571 17.7143H6.46429V10.0786H8.83928V17.7143H8.83571ZM7.65 9.03571C6.88929 9.03571 6.275 8.41786 6.275 7.66071C6.275 6.90357 6.88929 6.28571 7.65 6.28571C8.40714 6.28571 9.025 6.90357 9.025 7.66071C9.025 8.42143 8.41071 9.03571 7.65 9.03571ZM17.725 17.7143H15.3536V14C15.3536 13.1143 15.3357 11.975 14.1214 11.975C12.8857 11.975 12.6964 12.9393 12.6964 13.9357V17.7143H10.325V10.0786H12.6V11.1214H12.6321C12.95 10.5214 13.725 9.88929 14.8786 9.88929C17.2786 9.88929 17.725 11.4714 17.725 13.5286V17.7143Z"/>
-                    </svg>
+            <!-- Profile Info -->
+            <div class="text-center space-y-4">
+                <h1 class="text-3xl font-bold">Monika Tøkje Hauge</h1>
+                <div class="text-gray-600">@monikatkje_hauge</div>
+                <p class="text-gray-700 max-w-2xl">
+                    I'm a Sales Representative, Leadership, & Nurturer based in Norway - currently working at Assent AS · Norway
+                </p>
+                
+                <!-- Badges -->
+                <div class="flex flex-wrap justify-center gap-2 mt-4">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800">
+                        <i data-lucide="briefcase" class="w-4 h-4 mr-1"></i>
+                        Advisor
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-green-100 text-green-800">
+                        <i data-lucide="users" class="w-4 h-4 mr-1"></i>
+                        Manager
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-800">
+                        <i data-lucide="star" class="w-4 h-4 mr-1"></i>
+                        Leadership
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-800">
+                        <i data-lucide="presentation" class="w-4 h-4 mr-1"></i>
+                        Board Member
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-red-100 text-red-800">
+                        <i data-lucide="trending-up" class="w-4 h-4 mr-1"></i>
+                        Sales
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-800">
+                        <i data-lucide="heart" class="w-4 h-4 mr-1"></i>
+                        Mother
+                    </span>
+                </div>
+                
+                <!-- Contact Button -->
+                <a href="/contact" class="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Contact Me
                 </a>
             </div>
         </div>
-    </footer>
-</div>
+
+        <!-- Description -->
+        <div class="mt-12 text-center">
+            <p class="text-gray-700">
+                Jeg har gjennom min karriere jobbet med salg og skapt gode relasjoner med mange bedrifter som ønsker nettopp dette. Dette varmer hjertet mitt og gjør at jeg kan leve opp til min visjon i livet; « å hjelpe andre».
+            </p>
+        </div>
+
+        <!-- Resume Section -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-center mb-6">Resume</h2>
+            
+            <div class="space-y-4">
+                <article class="p-4 border-t border-gray-200">
+                    <p class="text-gray-600">Apr 2024 - Nå</p>
+                    <h3 class="font-bold">Driftskordinator, Assent AS</h3>
+                </article>
+                
+                <article class="p-4 border-t border-gray-200">
+                    <p class="text-gray-600">Oct 2023 - May 2024</p>
+                    <h3 class="font-bold">Jobbspesialist, NAV</h3>
+                </article>
+                
+                <article class="p-4 border-t border-gray-200">
+                    <p class="text-gray-600">Jan 2020 - May 2024</p>
+                    <h3 class="font-bold">Jobbveileder, Beredt AS</h3>
+                    <p class="mt-2">Jobber med AFT tiltaket i regi NAV. Målet er å rekruttere 50% av de som kommer til Beredt tilbake til arbeid eller utdanning. Vi kartlegger de som kommer til oss og matcher rett bedrift eller evt. utdanningsprogram.</p>
+                </article>
+                
+                <article class="p-4 border-t border-gray-200">
+                    <p class="text-gray-600">Jan 2020 - Dec 2022</p>
+                    <h3 class="font-bold">Veildning, VID vitenskapelige høgskole</h3>
+                </article>
+            </div>
+        </div>
+
+        <!-- Company Logos -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-center mb-6">Companies I've worked with</h2>
+            <div class="grid grid-cols-3 gap-8 items-center justify-items-center">
+                <img src="/images/nav-logo.jpg" alt="NAV" class="w-24 h-24 object-contain">
+                <img src="/images/beredt-logo.png" alt="Beredt" class="w-24 h-24 object-contain">
+                <img src="/images/assent-logo.png" alt="Kelly Services" class="w-24 h-24 object-contain">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 pt-4 border-t border-gray-200">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="text-gray-600 text-sm space-x-4">
+                    <span>Monika Tøkje Hauge</span>
+                    <span>@monikatkje_hauge</span>
+                    <span>Norway</span>
+                </div>
+                <div>
+                    <a href="https://www.linkedin.com/in/monika-tøkje-hauge-64a073142" 
+                       target="_blank" 
+                       class="text-blue-600 hover:text-blue-800">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
